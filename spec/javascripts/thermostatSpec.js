@@ -54,4 +54,18 @@ describe("Thermostat", function() {
     thermostat.resetTemperature();
     expect(thermostat.showTemperature()).toEqual(20);
   });
+
+  it("energy usage should be low if below 18", function() {
+    thermostat.down(5);
+    expect(thermostat.energyUsage()).toEqual("low-usage");
+  });
+
+  it("energy usage should be medium if between 18 and 25", function() {
+    expect(thermostat.energyUsage()).toEqual("medium-usage");
+  });
+
+  it("energy usage should be high if above 25", function() {
+    thermostat.up(10);
+    expect(thermostat.energyUsage()).toEqual("high-usage");
+  });
 });
