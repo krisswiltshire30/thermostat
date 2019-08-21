@@ -15,6 +15,14 @@ function Thermostat() {
     return this._maximum_temperature;
   };
 
+  Thermostat.prototype.changeTemp = function(max) {
+    return (this._temperature = max);
+  };
+
+  Thermostat.prototype.showMinTemperature = function() {
+    return this._MINIMUM_TEMPERATURE;
+  };
+
   Thermostat.prototype.isPowerSavingModeOn = function() {
     return this._powerSavingMode;
   };
@@ -39,6 +47,7 @@ function Thermostat() {
   };
 
   Thermostat.prototype.turnPowerSavingModeOn = function() {
+    this._maximum_temperature = 25;
     return (this._powerSavingMode = true);
   };
 
