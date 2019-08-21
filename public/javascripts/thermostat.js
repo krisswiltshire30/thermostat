@@ -3,9 +3,28 @@
 function Thermostat() {
   this._temperature = 20;
   this._MINIMUM_TEMPERATURE = 10;
+  this._maximum_temperature = 25;
+  this._powerSavingMode = true;
 
   Thermostat.prototype.showTemperature = function() {
     return this._temperature;
+  };
+
+  Thermostat.prototype.showMaxTemperature = function() {
+    return this._maximum_temperature;
+  };
+
+  Thermostat.prototype.isPowerSavingModeOn = function() {
+    return this._powerSavingMode;
+  };
+
+  Thermostat.prototype.turnPowerSavingModeOff = function() {
+    this._maximum_temperature = 32;
+    return (this._powerSavingMode = false);
+  };
+
+  Thermostat.prototype.turnPowerSavingModeOn = function() {
+    return (this._powerSavingMode = true);
   };
 
   Thermostat.prototype.up = function(temp) {
