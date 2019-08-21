@@ -16,8 +16,18 @@ describe("Thermostat", function() {
     expect(thermostat.showTemperature()).toEqual(21);
   });
 
+  it("should increase the temperature by one", function() {
+    thermostat.upOne();
+    expect(thermostat.showTemperature()).toEqual(21);
+  });
+
   it("should decrease the temperature", function() {
     thermostat.down(1);
+    expect(thermostat.showTemperature()).toEqual(19);
+  });
+
+  it("should decrease the temperature by one", function() {
+    thermostat.downOne();
     expect(thermostat.showTemperature()).toEqual(19);
   });
 

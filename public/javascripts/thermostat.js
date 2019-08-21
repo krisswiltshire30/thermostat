@@ -42,6 +42,14 @@ function Thermostat() {
     return (this._powerSavingMode = true);
   };
 
+  Thermostat.prototype.upOne = function() {
+    this._temperature++;
+  };
+
+  Thermostat.prototype.downOne = function() {
+    this._temperature--;
+  };
+
   Thermostat.prototype.up = function(temp) {
     this._temperature += temp;
   };
