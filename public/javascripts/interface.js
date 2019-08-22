@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  $("#temperature").text(thermostat.showTemperature());
+  updateTemperature();
 
   $("#temperature-up").click(function(event) {
     if (thermostat.showTemperature() === thermostat.showMaxTemperature()) {
@@ -8,7 +8,7 @@ $(document).ready(function() {
     } else {
       thermostat.upOne();
     }
-    $("#temperature").text(thermostat.showTemperature());
+    updateTemperature();
   });
 
   $("#temperature-down").click(function(event) {
@@ -17,12 +17,12 @@ $(document).ready(function() {
     } else {
       thermostat.downOne();
     }
-    $("#temperature").text(thermostat.showTemperature());
+    updateTemperature();
   });
 
   $("#temperature-reset").click(function(event) {
     thermostat.resetTemperature();
-    $("#temperature").text(thermostat.showTemperature());
+    updateTemperature();
   });
 
   $("#powersaving-on").click(function(event) {
@@ -31,12 +31,17 @@ $(document).ready(function() {
       thermostat.changeTemp(25);
     }
     $("#power-saving-status").text("on");
-    $("#temperature").text(thermostat.showTemperature());
+    updateTemperature();
   });
 
   $("#powersaving-off").click(function(event) {
     thermostat.turnPowerSavingModeOff();
     $("#power-saving-status").text("off");
-    $("#temperature").text(thermostat.showTemperature());
+    updateTemperature();
   });
+
+  function updateTemperature() {
+    $("#temperature").text(thermostat.showTemperature());
+    $("#temperature").attr("class", thermostat.energyUsage());
+  }
 });

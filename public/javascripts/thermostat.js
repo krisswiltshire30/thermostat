@@ -15,8 +15,8 @@ function Thermostat() {
     return this._maximum_temperature;
   };
 
-  Thermostat.prototype.changeTemp = function(max) {
-    return (this._temperature = max);
+  Thermostat.prototype.changeTemp = function(num) {
+    return (this._temperature = num);
   };
 
   Thermostat.prototype.showMinTemperature = function() {
@@ -28,9 +28,9 @@ function Thermostat() {
   };
 
   Thermostat.prototype.energyUsage = function() {
-    if (this._temperature < 18) {
+    if (this._temperature <= 18) {
       return (this._energyUsage = "low-usage");
-    } else if (this._temperature > 18 && this._temperature < 25) {
+    } else if (this._temperature > 18 && this._temperature <= 25) {
       return (this._energyUsage = "medium-usage");
     } else {
       return (this._energyUsage = "high-usage");
