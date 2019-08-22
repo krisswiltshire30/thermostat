@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
     <title>Thermostat</title>
     <script src="jquery.js"></script>
     <script src="./public/javascripts/interface.js"></script>
@@ -17,6 +21,11 @@
       .high-usage {
         color: red;
       }
+
+      body {
+        font-family: "Anton", serif;
+        font-size: 48px;
+      }
     </style>
   </head>
   <body>
@@ -31,6 +40,13 @@
         <button id="powersaving-off">PSM off</button>
       </p>
       <input type="range" min="1" max="32" value="20" id="temperature-slider" />
+      <h1>Current temperature: <span id="current-temperature"></span></h1>
+      <select id="current-city">
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="sydney">Sydney</option>
+      </select>
     </section>
   </body>
 </html>
