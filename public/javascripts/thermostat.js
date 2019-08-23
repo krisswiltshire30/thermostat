@@ -37,6 +37,16 @@ function Thermostat() {
     }
   };
 
+  Thermostat.prototype.emoji = function() {
+    if (this._temperature <= 18) {
+      return (this._energyUsage = "low-usage");
+    } else if (this._temperature > 18 && this._temperature <= 25) {
+      return (this._energyUsage = "medium-usage");
+    } else {
+      return (this._energyUsage = "high-usage");
+    }
+  };
+
   Thermostat.prototype.turnPowerSavingModeOff = function() {
     this._maximum_temperature = 32;
     return (this._powerSavingMode = false);

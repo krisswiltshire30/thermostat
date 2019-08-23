@@ -7,6 +7,11 @@
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Oswald"
       />
+      <link
+        href="https://afeld.github.io/emoji-css/emoji.css"
+        rel="stylesheet"
+      />
+
       <title>Thermostat</title>
       <script src="jquery.js"></script>
       <script src="./public/javascripts/interface.js"></script>
@@ -85,6 +90,11 @@
           color: red;
         }
 
+        .simple {
+          width: 500px;
+          margin: 10px auto;
+        }
+
         h1 {
           font-family: "Oswald";
         }
@@ -96,12 +106,12 @@
     <body>
       <section>
         <h3>Power saving mode is <span id="power-saving-status">on</span></h3>
-        <h1
-          style="font-size: 120px;font-weight: bold;line-height: 0;"
-          id="temperature"
-        ></h1>
-        <h1>
-          <button style="padding: 0;" class="btn" id="temperature-up">
+        <div class="simple">
+          <h1 style="font-size: 120px;line-height: 0;" id="temperature"></h1>
+        </div>
+        <i class="em em-fire"></i><i class="em em-snowflake"></i>
+        <h1 style="line-height: 20px;height: 20px;">
+          <button class="btn" id="temperature-up">
             +
           </button>
           <button class="btn" id="temperature-down">-</button>
