@@ -63,4 +63,9 @@ $(document).ready(function() {
     $("#temperature").text(thermostat.showTemperature());
     $("#temperature").attr("class", thermostat.energyUsage());
   }
+
+  function updateEmoji() {
+    $("#temperature").text(thermostat.showTemperature());
+    $("#temperature").attr("class", thermostat.emoji());
+  }
 });

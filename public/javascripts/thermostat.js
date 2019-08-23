@@ -6,6 +6,7 @@ function Thermostat() {
   this._maximum_temperature = 25;
   this._powerSavingMode = true;
   this._energyUsage = "medium-usage";
+  this._emoji = "medium-emoji";
 
   Thermostat.prototype.showTemperature = function() {
     return this._temperature;
@@ -39,11 +40,11 @@ function Thermostat() {
 
   Thermostat.prototype.emoji = function() {
     if (this._temperature <= 18) {
-      return (this._energyUsage = "low-emoji");
-    } else if (this._temperature > 18 && this._temperature <= 25) {
-      return (this._energyUsage = "medium-emoji");
+      return (this._emoji = "low-emoji");
+    } else if (this._emoji > 18 && this._temperature <= 25) {
+      return (this._emoji = "medium-emoji");
     } else {
-      return (this._energyUsage = "high-emoji");
+      return (this._emoji = "high-emoji");
     }
   };
 
