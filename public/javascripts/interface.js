@@ -46,7 +46,7 @@ $(document).ready(function() {
 
   $("#powersaving-on").click(function(event) {
     thermostat.turnPowerSavingModeOn();
-    if (thermostat.showTemperature() != thermostat.showMaxTemperature()) {
+    if (thermostat.showTemperature() >= thermostat.showMaxTemperature()) {
       thermostat.changeTemp(25);
     }
     $("#power-saving-status").text("on");

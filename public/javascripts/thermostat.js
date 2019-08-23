@@ -39,11 +39,11 @@ function Thermostat() {
 
   Thermostat.prototype.emoji = function() {
     if (this._temperature <= 18) {
-      return (this._energyUsage = "low-usage");
+      return (this._energyUsage = "low-emoji");
     } else if (this._temperature > 18 && this._temperature <= 25) {
-      return (this._energyUsage = "medium-usage");
+      return (this._energyUsage = "medium-emoji");
     } else {
-      return (this._energyUsage = "high-usage");
+      return (this._energyUsage = "high-emoji");
     }
   };
 
