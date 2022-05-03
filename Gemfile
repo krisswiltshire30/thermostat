@@ -8,4 +8,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem 'jasmine', '3.4.0'
 
-gem 'sinatra', '2.0.7'
+gem 'sinatra', '2.2.0'
